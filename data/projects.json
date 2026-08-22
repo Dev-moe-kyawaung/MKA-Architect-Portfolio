@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Video Player",
+    "description": "Media architecture with offline cache",
+    "url": "https://github.com/moekyawaung-tech/video-player",
+    "tags": ["Compose", "ExoPlayer"],
+    "repo": "moekyawaung-tech/video-player"
+  },
+  {
+    "name": "Social Dashboard",
+    "description": "Real-time feed & analytics",
+    "url": "https://github.com/moekyawaung-tech/social-dashboard",
+    "tags": ["Firebase", "MVVM"],
+    "repo": "moekyawaung-tech/social-dashboard"
+  },
+  {
+    "name": "POS Ultimate Pro Max",
+    "description": "Enterprise offline-first POS",
+    "url": "https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max",
+    "tags": ["Room", "Sync"],
+    "repo": "moekyawaung-tech/POS-Ultimate-Pro-Max"
+  },
+  {
+    "name": "Game Collection",
+    "description": "Multi-game modular hub",
+    "url": "https://github.com/moekyawaung-tech/game-collection",
+    "tags": ["Multi-module"],
+    "repo": "moekyawaung-tech/game-collection"
+  },
+  {
+    "name": "Weather App",
+    "description": "API + caching patterns",
+    "url": "https://github.com/moekyawaung-tech/Weather-app",
+    "tags": ["Retrofit", "Flow"],
+    "repo": "moekyawaung-tech/Weather-app"
+  },
+  {
+    "name": "Job Portal",
+    "description": "Full listing & apply flow",
+    "url": "https://github.com/moekyawaung-tech/Job-Portal-App",
+    "tags": ["Clean Arch"],
+    "repo": "moekyawaung-tech/Job-Portal-App"
+  },
+  {
+    "name": "PWA App",
+    "description": "Installable progressive web experience",
+    "url": "https://github.com/moekyawaung-tech/pwa-app",
+    "tags": ["PWA"],
+    "repo": "moekyawaung-tech/pwa-app"
+  },
+  {
+    "name": "Daily Planner",
+    "description": "Tasks, reminders & productivity",
+    "url": "https://github.com/moekyawaung-tech/Daily-planner-app",
+    "tags": ["Compose", "Room"],
+    "repo": "moekyawaung-tech/Daily-planner-app"
+  }
+]

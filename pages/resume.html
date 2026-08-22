@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume · Moe Kyaw Aung — Senior Android Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Myanmar:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="glow-orb o2"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MKA<span>.ARCH</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="lab.html">Lab</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="ctrl" id="langToggle">EN / မြန်မာ</button>
+        <button class="ctrl" id="aiToggle">✦ AI</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:7rem">
+    <div class="container" style="max-width:720px;text-align:center">
+      <div class="section-label">Resume</div>
+      <h1 class="section-title">Moe Kyaw Aung</h1>
+      <p style="color:var(--accent2);font-weight:600;letter-spacing:0.06em;font-size:0.9rem;margin-bottom:0.4rem">SENIOR MOBILE / ANDROID APP ARCHITECT</p>
+      <p style="color:var(--muted);margin-bottom:1.5rem">Tachileik, Myanmar 🇲🇲 ↔ Bangkok, Thailand 🇹🇭</p>
+      <div class="ctas" style="justify-content:center;margin-bottom:2.5rem">
+        <a href="../assets/Moe_Kyaw_Aung_Resume.pdf" download class="btn-primary">⬇ Download PDF</a>
+        <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn-secondary">GitHub</a>
+        <a href="../index.html#contact" class="btn-secondary">Contact</a>
+      </div>
+    </div>
+
+    <div class="container" style="max-width:720px">
+      <div class="glass" style="padding:1.8rem;margin-bottom:1.2rem;text-align:left">
+        <h2 style="font-size:1rem;color:var(--accent2);margin-bottom:0.7rem">Summary</h2>
+        <p style="color:var(--muted);font-size:0.92rem">
+          Senior Android Engineer / Architect designing high-performance apps with Kotlin, Jetpack Compose, MVVM/MVI, and Clean Architecture. Firebase + REST integration, offline-first data, and CI/CD (GitHub Actions, Azure DevOps). Mentors juniors and targets Microsoft-scale product quality.
+        </p>
+      </div>
+      <div class="glass" style="padding:1.8rem;margin-bottom:1.2rem;text-align:left">
+        <h2 style="font-size:1rem;color:var(--accent2);margin-bottom:0.7rem">Core skills</h2>
+        <p style="color:var(--muted);font-size:0.88rem;line-height:1.7">
+          Kotlin · Compose · Clean Architecture · MVVM/MVI · Room · Coroutines/Flow · Hilt · Firebase · Retrofit · GitHub Actions · Azure DevOps · JUnit/Espresso · TFLite · Security awareness
+        </p>
+      </div>
+      <div class="glass" style="padding:1.8rem;margin-bottom:1.2rem;text-align:left">
+        <h2 style="font-size:1rem;color:var(--accent2);margin-bottom:0.7rem">Highlights</h2>
+        <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.1rem;line-height:1.85">
+          <li>~40% faster cold start via architecture and startup discipline</li>
+          <li>CI/CD pipelines reducing release time by 60%+</li>
+          <li>Offline-first apps with Room as source of truth</li>
+          <li>82+ certificates · Google Developers Launchpad track</li>
+        </ul>
+      </div>
+      <div class="glass" style="padding:1.8rem;text-align:left">
+        <h2 style="font-size:1rem;color:var(--accent2);margin-bottom:0.7rem">Contact</h2>
+        <p style="color:var(--muted);font-size:0.9rem;line-height:1.8">
+          +95 9 889 000 889 · +959 666 000 050<br>
+          moekyawaung@asia.com<br>
+          github.com/Dev-moe-kyawaung · linkedin.com/in/moe-kyaw-aung-2653093a1
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="lab.html">Lab</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="resume.html">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <p class="quote">"Code with culture. Build with purpose."</p>
+    <p class="copy">© 2026 Moe Kyaw Aung</p>
+  </footer>
+
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header"><span>✦ Architect AI</span><button id="aiClose">✕</button></div>
+    <div class="ai-messages" id="aiMessages"><div class="ai-msg bot">Ask about experience, skills, or hiring fit.</div></div>
+    <div class="ai-input-wrap"><input type="text" id="aiInput" placeholder="Ask..." /><button id="aiSend">Send</button></div>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

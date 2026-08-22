@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Android Roadmap · Moe Kyaw Aung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Myanmar:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="glow-orb o1"></div>
+  <div class="glow-orb o3"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MKA<span>.ARCH</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="lab.html">Lab</a></li>
+        <li><a href="roadmap.html" class="active">Roadmap</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="ctrl" id="langToggle">EN / မြန်မာ</button>
+        <button class="ctrl" id="aiToggle">✦ AI</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:7rem">
+    <div class="container">
+      <div class="section-label">Android Roadmap</div>
+      <h1 class="section-title">From platform to architect</h1>
+      <p class="section-sub">A practical progression used in mentoring and self-development — not a rigid checklist.</p>
+
+      <div class="roadmap">
+        <div class="rm-item glass">
+          <div class="rm-year">01 · FOUNDATION</div>
+          <h3>Kotlin & Android fundamentals</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Language idioms, coroutines, lifecycle, View system, resources, and debugging. Comfort with Android Studio and Gradle.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">02 · ARCHITECTURE</div>
+          <h3>MVVM → Clean Architecture</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Separation of concerns, use cases, repositories, unidirectional data flow. Introduce multi-module boundaries early.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">03 · COMPOSE</div>
+          <h3>Declarative UI at scale</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Compose runtime, state, side-effects, Navigation, Material 3, accessibility, and recomposition discipline.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">04 · DATA & OFFLINE</div>
+          <h3>Room, sync, resilience</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Local-first design, WorkManager, conflict handling, Paging, and network as an implementation detail of data.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">05 · QUALITY</div>
+          <h3>Testing & performance</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Unit + instrumentation + Compose tests. Startup, memory, jank budgets. Baseline Profiles and R8.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">06 · DELIVERY</div>
+          <h3>CI/CD & release engineering</h3>
+          <p style="color:var(--muted);font-size:0.9rem">GitHub Actions / Azure DevOps, signing, tracks, feature flags, and observability in production.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">07 · ARCHITECT</div>
+          <h3>System design & leadership</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Cross-feature contracts, tech strategy, mentoring, and evolving architecture without big-bang rewrites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="lab.html">Lab</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="resume.html">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <p class="quote">"Code with culture. Build with purpose."</p>
+    <p class="copy">© 2026 Moe Kyaw Aung · Senior Android App Architect</p>
+  </footer>
+
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header"><span>✦ Architect AI</span><button id="aiClose">✕</button></div>
+    <div class="ai-messages" id="aiMessages"><div class="ai-msg bot">Ask which stage to focus on next for your career path.</div></div>
+    <div class="ai-input-wrap"><input type="text" id="aiInput" placeholder="What after Compose?" /><button id="aiSend">Send</button></div>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

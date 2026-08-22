@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture Lab · Moe Kyaw Aung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Myanmar:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="glow-orb o1"></div>
+  <div class="glow-orb o2"></div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">MKA<span>.ARCH</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#architecture">Architecture</a></li>
+        <li><a href="lab.html" class="active">Lab</a></li>
+        <li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <button class="ctrl" id="langToggle">EN / မြန်မာ</button>
+        <button class="ctrl" id="aiToggle">✦ AI</button>
+        <button class="menu-btn" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:7rem">
+    <div class="container">
+      <div class="section-label">Architecture Lab</div>
+      <h1 class="section-title">Patterns in practice</h1>
+      <p class="section-sub">Deep-dive reference for Clean Architecture, offline-first, and multi-module Android systems.</p>
+
+      <div class="arch-stack" style="margin-bottom:2.5rem">
+        <div class="arch-layer"><h4>Presentation</h4><p>Compose · ViewModel · StateFlow · Navigation</p></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer"><h4>Domain</h4><p>Use cases · Entities · Repository interfaces</p></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer"><h4>Data</h4><p>Room · Retrofit · DataStore · Mappers</p></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer" style="border-color:rgba(34,211,238,0.45)"><h4>Infrastructure</h4><p>WorkManager sync · Firebase · CI artifacts</p></div>
+      </div>
+
+      <div class="grid-2" style="margin-bottom:2rem">
+        <div class="glass" style="padding:1.5rem">
+          <h3 style="color:var(--accent2);margin-bottom:0.6rem">Offline-first rules</h3>
+          <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.1rem;line-height:1.8">
+            <li>Room is the single source of truth</li>
+            <li>UI never calls the network directly</li>
+            <li>Optimistic updates + background reconcile</li>
+            <li>WorkManager for constrained sync</li>
+            <li>Conflict policy per entity type</li>
+          </ul>
+        </div>
+        <div class="glass" style="padding:1.5rem">
+          <h3 style="color:var(--accent2);margin-bottom:0.6rem">Module boundaries</h3>
+          <ul style="color:var(--muted);font-size:0.9rem;padding-left:1.1rem;line-height:1.8">
+            <li><code>:app</code> — thin shell, navigation</li>
+            <li><code>:feature:*</code> — screens + feature VMs</li>
+            <li><code>:core:domain</code> — pure Kotlin</li>
+            <li><code>:core:data</code> — Room, network, repos</li>
+            <li><code>:core:ui</code> — shared Compose components</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem">Hilt / DI</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Scoped modules per layer; test doubles at boundaries</p></div>
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem">Testing pyramid</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Unit → repository → Compose UI → few E2E</p></div>
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem">Observability</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Crashlytics · Performance · custom traces</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="../index.html">Home</a>
+      <a href="lab.html">Lab</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="resume.html">Resume</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+    <p class="quote">"Code with culture. Build with purpose."</p>
+    <p class="copy">© 2026 Moe Kyaw Aung · Senior Android App Architect</p>
+  </footer>
+
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header"><span>✦ Architect AI</span><button id="aiClose">✕</button></div>
+    <div class="ai-messages" id="aiMessages"><div class="ai-msg bot">Ask about layers, modules, or offline-first rules.</div></div>
+    <div class="ai-input-wrap"><input type="text" id="aiInput" placeholder="Explain domain layer..." /><button id="aiSend">Send</button></div>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

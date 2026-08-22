@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Moe Kyaw Aung — Senior Mobile/Android App Architect | Kotlin · Compose · Clean Architecture" />
+  <title>Moe Kyaw Aung | Senior Android App Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Myanmar:wght@400;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" />
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <div class="glow-orb o1"></div>
+  <div class="glow-orb o2"></div>
+  <div class="glow-orb o3"></div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">MKA<span>.ARCH</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#roadmap" data-i18n="nav_roadmap">Roadmap</a></li>
+        <li><a href="#compose" data-i18n="nav_compose">Compose</a></li>
+        <li><a href="#architecture" data-i18n="nav_arch">Architecture</a></li>
+        <li><a href="#performance" data-i18n="nav_perf">Perf</a></li>
+        <li><a href="#cicd" data-i18n="nav_cicd">CI/CD</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="pages/lab.html" data-i18n="nav_lab">Lab</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="nav-controls">
+        <div class="nav-dropdown" id="langDropdown">
+          <button type="button" class="nav-dropdown-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">🌐 EN</button>
+          <div class="nav-dropdown-menu" role="menu">
+            <button type="button" data-lang="en" class="active">English</button>
+            <button type="button" data-lang="my">မြန်မာ</button>
+            <button type="button" data-lang="th">ไทย</button>
+          </div>
+        </div>
+        <div class="nav-dropdown" id="currencyDropdown">
+          <button type="button" class="nav-dropdown-btn" id="currencyBtn" aria-haspopup="true">💱 USD</button>
+          <div class="nav-dropdown-menu" role="menu">
+            <button type="button" data-currency="USD" class="active">USD $</button>
+            <button type="button" data-currency="MMK">MMK K</button>
+            <button type="button" data-currency="THB">THB ฿</button>
+            <button type="button" data-currency="EUR">EUR €</button>
+          </div>
+        </div>
+        <button type="button" class="ctrl ctrl-theme" id="themeToggle" title="Theme">☾</button>
+        <button type="button" class="ctrl" id="aiToggle">✦ AI</button>
+        <button type="button" class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 01 HERO — Cinematic 3D -->
+  <section class="hero interactive-particles" id="hero">
+    <div class="hero-bg-morph" aria-hidden="true">
+      <div class="morph-panel p1"></div>
+      <div class="morph-panel p2"></div>
+      <div class="morph-panel p3"></div>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <div class="badge"><span class="badge-dot"></span> OPEN TO ARCHITECT ROLES</div>
+        <div class="live-bar"><span id="liveStatus">Loading GitHub…</span> <span id="fetchStatus" data-state="loading"></span></div>
+        <h1>
+          <span class="gradient">Moe Kyaw Aung</span>
+          <span class="hero-my">မိုးကျော်အောင်</span>
+        </h1>
+        <div class="typing-line"><span id="typing"></span><span class="cursor">|</span></div>
+        <p class="hero-desc" data-en="Senior Mobile/Android App Architect designing scalable, offline-first systems with Kotlin, Jetpack Compose, Clean Architecture, and production CI/CD. Bridging Myanmar and global tech." data-my="Kotlin၊ Jetpack Compose၊ Clean Architecture နှင့် production CI/CD ဖြင့် scalable offline-first စနစ်များကို ဒီဇိုင်းဆွဲသော Senior Mobile/Android App Architect။">
+          Senior Mobile/Android App Architect designing scalable, offline-first systems with Kotlin, Jetpack Compose, Clean Architecture, and production CI/CD. Bridging Myanmar and global tech.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-card glass"><div class="stat-n" data-count="10">0</div><div class="stat-l">Years</div></div>
+          <div class="stat-card glass"><div class="stat-n" data-count="82">0</div><div class="stat-l">Certs</div></div>
+          <div class="stat-card glass"><div class="stat-n" data-count="40">0</div><div class="stat-l">Projects</div></div>
+          <div class="stat-card glass"><div class="stat-n" data-count="16">0</div><div class="stat-l">Socials</div></div>
+        </div>
+        <p class="currency-hint" id="currencyHint">Rates display: <strong id="currencyLabel">USD</strong> · for freelance estimates</p>
+        <div class="ctas">
+          <a href="#architecture" class="btn-primary">Architecture Lab</a>
+          <a href="#projects" class="btn-secondary">View Projects</a>
+          <a href="pages/resume.html" class="btn-secondary">Resume</a>
+        </div>
+      </div>
+      <div class="hero-visual float-3d">
+        <div id="threeHero" class="three-hero-mount" aria-hidden="true"></div>
+        <div class="avatar-stack">
+          <div class="avatar-ring"></div>
+          <img class="avatar-main glass" src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="Moe Kyaw Aung" />
+          <div class="morph-glass mg1">Kotlin · Coroutines</div>
+          <div class="morph-glass mg2">Clean Architecture</div>
+          <div class="morph-glass mg3">Compose · 60fps</div>
+          <span class="float-chip c1">Kotlin</span>
+          <span class="float-chip c2">Compose</span>
+          <span class="float-chip c3">Clean Arch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ABOUT -->
+  <section class="section alt" id="about">
+    <div class="container">
+      <div class="section-label fade-up">01 · About</div>
+      <h2 class="section-title fade-up" data-en="Architect by craft" data-my="လက်ရာဖြင့် Architect">Architect by craft</h2>
+      <div class="grid-2 fade-up">
+        <div class="glass" style="padding:1.8rem">
+          <p style="color:var(--muted);margin-bottom:1rem" data-en="I design multi-module Android systems that stay maintainable under growth: clear domain boundaries, offline-first data, and measurable performance budgets." data-my="ကြီးထွားမှုအောက်တွင် ထိန်းသိမ်းနိုင်သော multi-module Android စနစ်များကို ဒီဇိုင်းဆွဲသည်။">
+            I design multi-module Android systems that stay maintainable under growth: clear domain boundaries, offline-first data, and measurable performance budgets.
+          </p>
+          <p style="color:var(--muted)" data-en="Philosophy: Code with culture. Build with purpose." data-my="အတွေးအခေါ်: ယဉ်ကျေးမှုနှင့်အတူ ကုဒ်ရေးပါ။ ရည်ရွယ်ချက်နှင့် တည်ဆောက်ပါ။">
+            Philosophy: <em style="color:var(--accent2)">Code with culture. Build with purpose.</em>
+          </p>
+        </div>
+        <div class="glass" style="padding:1.8rem">
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--glass-border);padding:0.5rem 0;font-size:0.9rem"><span style="color:var(--muted)">Role</span><strong>Senior Android Architect</strong></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--glass-border);padding:0.5rem 0;font-size:0.9rem"><span style="color:var(--muted)">Location</span><strong>Tachileik ↔ Bangkok</strong></div>
+          <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--glass-border);padding:0.5rem 0;font-size:0.9rem"><span style="color:var(--muted)">Focus</span><strong>Compose · Offline-First</strong></div>
+          <div style="display:flex;justify-content:space-between;padding:0.5rem 0;font-size:0.9rem"><span style="color:var(--muted)">Status</span><strong style="color:var(--success)">● Open to work</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SKILLS MATRIX -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-label fade-up">02 · Skills Matrix</div>
+      <h2 class="section-title fade-up">Animated skill graphs</h2>
+      <p class="section-sub fade-up">Depth across mobile architecture, platform APIs, and delivery systems.</p>
+      <div class="grid-2 fade-up">
+        <div class="matrix-card glass" id="skillBars">
+          <h3>Core proficiency</h3>
+          <div class="skill-row"><div class="skill-top"><span>Kotlin</span><span>98%</span></div><div class="skill-track"><div class="skill-fill" data-w="98"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Jetpack Compose</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Clean Architecture</span><span>96%</span></div><div class="skill-track"><div class="skill-fill" data-w="96"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>MVVM / MVI</span><span>94%</span></div><div class="skill-track"><div class="skill-fill" data-w="94"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Room + Offline-First</span><span>92%</span></div><div class="skill-track"><div class="skill-fill" data-w="92"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Firebase</span><span>90%</span></div><div class="skill-track"><div class="skill-fill" data-w="90"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>CI/CD (GHA · Azure)</span><span>88%</span></div><div class="skill-track"><div class="skill-fill" data-w="88"></div></div></div>
+          <div class="skill-row"><div class="skill-top"><span>Testing (JUnit · Espresso)</span><span>85%</span></div><div class="skill-track"><div class="skill-fill" data-w="85"></div></div></div>
+        </div>
+        <div class="matrix-card glass radar-card">
+          <h3>Architecture radar</h3>
+          <div class="radar-wrap">
+            <canvas id="skillRadar" aria-label="Skills radar chart"></canvas>
+          </div>
+          <p class="radar-caption">Mobile · Data · Cloud · Delivery · AI/Security · Testing</p>
+        </div>
+      </div>
+      <div class="grid-auto fade-up" style="margin-top:1.5rem">
+        <div class="glass" style="padding:0.9rem"><strong style="color:var(--accent2)">Mobile</strong><br><span style="font-size:0.8rem;color:var(--muted)">Kotlin · Compose · Multi-module · Hilt</span></div>
+        <div class="glass" style="padding:0.9rem"><strong style="color:var(--accent2)">Data</strong><br><span style="font-size:0.8rem;color:var(--muted)">Room · DataStore · Sync engines · Paging</span></div>
+        <div class="glass" style="padding:0.9rem"><strong style="color:var(--accent2)">Cloud</strong><br><span style="font-size:0.8rem;color:var(--muted)">Firebase · REST · WorkManager</span></div>
+        <div class="glass" style="padding:0.9rem"><strong style="color:var(--accent2)">Delivery</strong><br><span style="font-size:0.8rem;color:var(--muted)">GitHub Actions · Azure DevOps · Fastlane</span></div>
+        <div class="glass" style="padding:0.9rem"><strong style="color:var(--accent2)">AI / Security</strong><br><span style="font-size:0.8rem;color:var(--muted)">TFLite · Claude API · Ethical Hacking</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ANDROID ROADMAP -->
+  <section class="section alt" id="roadmap">
+    <div class="container">
+      <div class="section-label fade-up">03 · Android Roadmap</div>
+      <h2 class="section-title fade-up">Development journey</h2>
+      <div class="roadmap fade-up">
+        <div class="rm-item glass">
+          <div class="rm-year">FOUNDATION</div>
+          <h3>Platform & language mastery</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Kotlin idioms, Android SDK, lifecycle, and solid UI foundations.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">ARCHITECTURE</div>
+          <h3>Clean Architecture · MVVM/MVI</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Domain boundaries, use cases, repository pattern, multi-module apps.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">COMPOSE ERA</div>
+          <h3>Jetpack Compose production</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Declarative UI, Material 3, Navigation, performance, accessibility.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">OFFLINE-FIRST</div>
+          <h3>Sync engines & resilience</h3>
+          <p style="color:var(--muted);font-size:0.9rem">Room as source of truth, WorkManager, conflict resolution, caching.</p>
+        </div>
+        <div class="rm-item glass">
+          <div class="rm-year">DELIVERY</div>
+          <h3>CI/CD & scale</h3>
+          <p style="color:var(--muted);font-size:0.9rem">GitHub Actions, Azure DevOps, testing gates, release automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 COMPOSE UI GALLERY -->
+  <section class="section" id="compose">
+    <div class="container">
+      <div class="section-label fade-up">04 · Compose UI Gallery</div>
+      <h2 class="section-title fade-up">Jetpack Compose showcase</h2>
+      <div class="grid-4 fade-up">
+        <div class="compose-card glass float-3d"><div class="compose-icon">✦</div><h3>Declarative UI</h3><p>State-driven screens at 60fps</p></div>
+        <div class="compose-card glass float-3d"><div class="compose-icon">◈</div><h3>Material 3</h3><p>Dynamic color & theming</p></div>
+        <div class="compose-card glass float-3d"><div class="compose-icon">⬡</div><h3>Navigation</h3><p>Type-safe graphs</p></div>
+        <div class="compose-card glass float-3d"><div class="compose-icon">⬢</div><h3>Performance</h3><p>Stable types & profiling</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 ARCHITECTURE LAB -->
+  <section class="section alt" id="architecture">
+    <div class="container">
+      <div class="section-label fade-up">05 · Architecture Lab</div>
+      <h2 class="section-title fade-up">Offline-first stack</h2>
+      <div class="arch-stack fade-up">
+        <div class="arch-layer"><h4>UI · Compose + ViewModel</h4><p>StateFlow · Unidirectional data flow</p></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer"><h4>Domain · Use Cases</h4><p>Pure business rules · Repository contracts</p></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer"><h4>Data · Room + Network</h4><p>Local source of truth · Retrofit · Mappers</p></div>
+        <div class="arch-arrow">↓</div>
+        <div class="arch-layer" style="border-color:rgba(34,211,238,0.4)"><h4>Sync Engine</h4><p>WorkManager · Conflicts · Delta sync · Firebase</p></div>
+      </div>
+      <div class="grid-2 fade-up">
+        <div class="glass" style="padding:1.3rem"><strong style="color:var(--accent2)">Single source of truth</strong><p style="color:var(--muted);font-size:0.85rem;margin-top:0.4rem">UI always reads Room; network only writes to DB.</p></div>
+        <div class="glass" style="padding:1.3rem"><strong style="color:var(--accent2)">Multi-module boundaries</strong><p style="color:var(--muted);font-size:0.85rem;margin-top:0.4rem">Feature modules + core domain/data for team scale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 PERFORMANCE -->
+  <section class="section" id="performance">
+    <div class="container">
+      <div class="section-label fade-up">06 · Performance Benchmarks</div>
+      <h2 class="section-title fade-up">Measured improvements</h2>
+      <div class="glass fade-up" style="padding:1.8rem;max-width:640px" id="benchBars">
+        <div class="bench-item"><div class="bench-label"><span>Cold start reduction</span><span>40%</span></div><div class="bench-bar"><div class="bench-fill" data-w="40"></div></div></div>
+        <div class="bench-item"><div class="bench-label"><span>Release time cut (CI/CD)</span><span>60%</span></div><div class="bench-bar"><div class="bench-fill" data-w="60"></div></div></div>
+        <div class="bench-item"><div class="bench-label"><span>Crash-free sessions</span><span>99%</span></div><div class="bench-bar"><div class="bench-fill" data-w="99"></div></div></div>
+        <div class="bench-item"><div class="bench-label"><span>Offline resilience coverage</span><span>95%</span></div><div class="bench-bar"><div class="bench-fill" data-w="95"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 CI/CD -->
+  <section class="section alt" id="cicd">
+    <div class="container">
+      <div class="section-label fade-up">07 · CI/CD Pipelines</div>
+      <h2 class="section-title fade-up">Automated delivery</h2>
+      <div class="pipeline fade-up">
+        <span class="pipe-step">Push</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step active">Lint + Unit</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step active">UI Tests</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">Build APK/AAB</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">Sign</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step active">Deploy</span>
+      </div>
+      <p class="section-sub fade-up" style="text-align:center;margin:0 auto">GitHub Actions · Azure DevOps · Fastlane · quality gates before every release.</p>
+    </div>
+  </section>
+
+  <!-- 09 PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label fade-up">08 · Projects</div>
+      <h2 class="section-title fade-up">Selected architecture work</h2>
+      <div class="grid-auto fade-up" id="projectsGrid">
+        <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="project-card glass"><h3>Video Player</h3><p>Media architecture with offline cache</p><div class="tags"><span class="tag">Compose</span><span class="tag">ExoPlayer</span></div></a>
+        <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="project-card glass"><h3>Social Dashboard</h3><p>Real-time feed & analytics</p><div class="tags"><span class="tag">Firebase</span><span class="tag">MVVM</span></div></a>
+        <a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max" target="_blank" class="project-card glass"><h3>POS Ultimate Pro Max</h3><p>Enterprise offline-first POS</p><div class="tags"><span class="tag">Room</span><span class="tag">Sync</span></div></a>
+        <a href="https://github.com/moekyawaung-tech/game-collection" target="_blank" class="project-card glass"><h3>Game Collection</h3><p>Multi-game modular hub</p><div class="tags"><span class="tag">Multi-module</span></div></a>
+        <a href="https://github.com/moekyawaung-tech/Weather-app" target="_blank" class="project-card glass"><h3>Weather App</h3><p>API + caching patterns</p><div class="tags"><span class="tag">Retrofit</span><span class="tag">Flow</span></div></a>
+        <a href="https://github.com/moekyawaung-tech/Job-Portal-App" target="_blank" class="project-card glass"><h3>Job Portal</h3><p>Full listing & apply flow</p><div class="tags"><span class="tag">Clean Arch</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10–12 QUICK SECTIONS -->
+  <section class="section alt" id="security">
+    <div class="container">
+      <div class="section-label fade-up">09 · Security</div>
+      <h2 class="section-title fade-up">Secure by design</h2>
+      <div class="grid-3 fade-up">
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem;color:var(--accent2)">Auth & secrets</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Encrypted storage · Keystore · secure tokens</p></div>
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem;color:var(--accent2)">Network</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Certificate pinning · TLS · API hardening</p></div>
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem;color:var(--accent2)">Ethical hacking</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Threat modeling · OWASP mobile awareness</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ai-ml">
+    <div class="container">
+      <div class="section-label fade-up">10 · On-Device AI</div>
+      <h2 class="section-title fade-up">ML in production apps</h2>
+      <div class="grid-3 fade-up">
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem;color:var(--accent2)">TFLite</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">On-device inference pipelines</p></div>
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem;color:var(--accent2)">Claude API</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Translation & assistant features</p></div>
+        <div class="glass" style="padding:1.3rem"><h3 style="font-size:0.95rem;color:var(--accent2)">Privacy-first</h3><p style="font-size:0.85rem;color:var(--muted);margin-top:0.4rem">Local models where possible</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section alt" id="contact">
+    <div class="container">
+      <div class="section-label fade-up">11 · Contact</div>
+      <h2 class="section-title fade-up" data-en="Let's design systems" data-my="စနစ်များကို ဒီဇိုင်းဆွဲကြရအောင်">Let's design systems</h2>
+      <div class="contact-grid fade-up">
+        <div class="contact-info glass">
+          <h3>Get in touch</h3>
+          <p><strong style="color:var(--text)">Phone</strong><br>+95 9 889 000 889<br>+959 666 000 050</p>
+          <p><strong style="color:var(--text)">Email</strong><br>moekyawaung@asia.com</p>
+          <p><strong style="color:var(--text)">Location</strong><br>Tachileik, Myanmar 🇲🇲 ↔ Bangkok 🇹🇭</p>
+          <p><span style="color:var(--success)">● Available for senior / architect roles</span></p>
+          <div class="ctas" style="margin-top:1rem">
+            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn-primary">GitHub</a>
+            <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank" class="btn-secondary">LinkedIn</a>
+          </div>
+        </div>
+        <form class="contact-form glass" onsubmit="alert('Thanks! (Demo form)');return false;">
+          <input type="text" placeholder="Name / အမည်" required />
+          <input type="email" placeholder="Email" required />
+          <textarea rows="4" placeholder="Message about architecture / roles" required></textarea>
+          <button type="submit" class="btn-primary">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-nav">
+      <a href="#hero">Home</a>
+      <a href="#architecture">Architecture</a>
+      <a href="pages/lab.html">Lab</a>
+      <a href="pages/roadmap.html">Roadmap</a>
+      <a href="pages/resume.html">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="quote">"Code with culture. Build with purpose."</p>
+    <p class="copy">© 2026 Moe Kyaw Aung · Senior Android App Architect · Tachileik ↔ Bangkok</p>
+  </footer>
+
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-header"><span>✦ Architect AI</span><button id="aiClose">✕</button></div>
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-msg bot">Ask me about Clean Architecture, Compose, offline-first, CI/CD, or any project. I explain design decisions.</div>
+    </div>
+    <div class="ai-input-wrap">
+      <input type="text" id="aiInput" placeholder="Explain offline-first..." />
+      <button id="aiSend">Send</button>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="js/fetch-data.js"></script>
+  <script src="js/three-hero.js"></script>
+  <script src="js/nav-modular.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

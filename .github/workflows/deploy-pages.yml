@@ -1,0 +1,64 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Prepare site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate critical files
+        run: |
+          test -f index.html
+          test -f css/style.css
+          test -f js/main.js
+          test -f js/fetch-data.js
+          jq empty data/projects.json
+          jq empty data/skills.json
+          jq empty data/config.json
+
+      - name: Inject build metadata
+        run: |
+          # Optional: stamp deploy time into a small meta file for the client
+          mkdir -p data
+          cat > data/build.json << EOF
+          {
+            "sha": "${{ github.sha }}",
+            "ref": "${{ github.ref_name }}",
+            "builtAt": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "runId": "${{ github.run_id }}"
+          }
+          EOF
+          cat data/build.json
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    name: Deploy to Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

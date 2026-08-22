@@ -1,0 +1,16 @@
+{
+  "bars": [
+    { "name": "Kotlin", "value": 98 },
+    { "name": "Jetpack Compose", "value": 95 },
+    { "name": "Clean Architecture", "value": 96 },
+    { "name": "MVVM / MVI", "value": 94 },
+    { "name": "Room + Offline-First", "value": 92 },
+    { "name": "Firebase", "value": 90 },
+    { "name": "CI/CD (GHA · Azure)", "value": 88 },
+    { "name": "Testing (JUnit · Espresso)", "value": 85 }
+  ],
+  "radar": {
+    "labels": ["Mobile", "Data", "Cloud", "Delivery", "AI / Security", "Testing"],
+    "values": [96, 93, 90, 88, 82, 85]
+  }
+}

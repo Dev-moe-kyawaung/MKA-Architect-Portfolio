@@ -1,0 +1,110 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install validators
+        run: |
+          npm install -g html-validate@8
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jq
+
+      - name: Validate JSON data files
+        run: |
+          echo "==> Validating data/*.json"
+          for f in data/*.json; do
+            echo "Checking $f"
+            jq empty "$f"
+          done
+          echo "JSON OK"
+
+      - name: Validate HTML
+        run: |
+          echo "==> HTML validate"
+          # Config: allow common static-site patterns
+          cat > .htmlvalidate.json << 'EOF'
+          {
+            "extends": ["html-validate:recommended"],
+            "rules": {
+              "no-inline-style": "off",
+              "element-required-attributes": "warn",
+              "void-style": "off",
+              "no-trailing-whitespace": "off",
+              "attr-quotes": "off",
+              "long-title": "off",
+              "prefer-native-element": "off",
+              "script-type": "off",
+              "require-sri": "off",
+              "no-raw-characters": "off"
+            }
+          }
+          EOF
+          html-validate index.html pages/*.html || true
+          # Soft fail for PR feedback; hard-check critical paths exist
+          test -f index.html
+          test -f css/style.css
+          test -f js/main.js
+          test -f js/fetch-data.js
+          test -f data/projects.json
+          test -f data/skills.json
+          test -f data/config.json
+          echo "Structure OK"
+
+      - name: Check required assets
+        run: |
+          test -f assets/Moe_Kyaw_Aung_Resume.pdf && echo "Resume PDF present" || echo "WARN: resume PDF missing"
+          echo "Required files:"
+          find . -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.json' \) ! -path './.git/*' | sort
+
+      - name: JS syntax check
+        run: |
+          for f in js/*.js; do
+            case "$f" in
+              *.legacy.js) echo "Skip $f"; continue ;;
+            esac
+            echo "node --check $f"
+            node --check "$f"
+          done
+          echo "JS syntax OK"
+
+  # Optional: simple Lighthouse CI-style smoke (HTTP server + curl)
+  smoke:
+    name: Smoke test
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Serve & probe
+        run: |
+          python3 -m http.server 8765 &
+          sleep 1
+          curl -sf http://127.0.0.1:8765/index.html | head -c 200
+          echo ""
+          curl -sf http://127.0.0.1:8765/data/projects.json | jq 'length'
+          curl -sf http://127.0.0.1:8765/data/skills.json | jq '.radar.labels | length'
+          curl -sf http://127.0.0.1:8765/css/style.css | head -c 80
+          echo ""
+          curl -sf -o /dev/null -w "%{http_code}" http://127.0.0.1:8765/pages/lab.html
+          echo " lab.html"
+          echo "Smoke OK"
